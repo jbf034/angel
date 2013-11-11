@@ -1,0 +1,89 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="text/html">
+<META HTTP-EQUIV="Pragma"CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires"CONTENT="0">
+<title>flower</title>
+
+<%=stylesheet_link_tag "appliation",media:'all'%>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+</head>
+<div id="jbf">jbf034</div>
+<body>
+<div  class="container">
+  <div   id="header">
+		 <div class="divHead1"> 
+			 <IMG border=0 src="/index/i2.gif"  width=64 height=22/>
+			 <IMG border=0 src="/index/i3.gif"  width=63 height=22/>
+			 <IMG border=0 src="/index/i4.gif"  width=63 height=22/>
+			 <IMG border=0 src="/index/i5.gif"   width=86 height=22/>
+			 <IMG border=0 src="/index/i6.gif"  width=86 height=22/>
+			 <IMG border=0 src="/index/i7.gif"   width=86 height=22/>
+			 <IMG border=0 src="/index/i8.gif"  width=90 height=22 />
+		</div>
+				
+		<div class="divHead2">
+		    	<table border=0 cellspacing=0 cellpadding=0 align=left height=23>
+					 <tr align=middle>
+					<td valign=center background=/index/i13.gif width=73><A class=link href="#">婚礼庆典</A></td>
+					<td valign=center background=/index/i13.gif width=73><A class=link href="#">购物指南</A></td>
+					<td background=/index/i13.gif width=73><a class=link href="#">订单查询</a><td>
+					<td background=/index/i13.gif width=73><a class=link href="#">节日提醒</a><td>
+					<td background=/index/i13.gif width=73><a class=link href="#">说话玫瑰</a><td>
+					<td background=/index/i13.gif width=73><a class=link href="#">自助订花</a><td>
+					<td background=/index/i13.gif width=73><a class=link href="#">鲜花常识</a><td>
+					<td background=/index/i13.gif width=73><a class=link href="#">团购服务</a><td>
+						  </tr>
+				  </table>
+	    </div>
+				
+	    <div class="divHead3">
+		 	<%form_tag('tabflowers/search') do-%>
+			  <%=text_field(:tabflower,:fName,size:4)%>
+			  <%=submit_tag "GO"%>
+			<% end-%>
+	    </div>
+   </div>
+	
+  <div class="twoColFixLtHdr" id="sidebar1">
+     <div class="divleftLogin">
+		  <%=form_tag('/tabusers/login') do-%>
+				 <div class="divleft1"><br><br>
+					   姓名： <%=text_field(:tabuser,:uName,:class=>"txt",size:10)%><br><br>
+				      密码： <%=password_field(:tabuser,:uPass,class:'text',size:12)%>
+			     </div>
+					<br>    
+			     <div class="divleftBtn">
+	               <%=submit_tag "登陆",:class=>"Appbtn"%>
+	    			<a href="/tabuser/register" width=80 height=22>注册新用户</a>
+				 </div>
+	         
+			<% end-%>
+		    <div class="divleftCart"><a href="/tabflowers/checkout" class="link">查看购物车</a></div>
+	 </div>
+	  
+	 
+
+
+	 <div class="divleftLogin1">
+
+	      <div class="divleftLogin1CK">
+		        <font color="red" size="2">你好, 用户名：<br>&nbsp;&nbsp;你已经成功登录! </font><br>
+	           <font color="red">我们的宗旨是：<br>你就是我们的上帝</font>
+	           <div style="margin-left:60px;padding-top:5px;"><a href="/tabusers/exit"	class="link">退出</a></div>
+	     </div>
+	    
+		 <div class="divleftCart"><a href="/tabflowers/checkout" class="link">查看购物车</a></div>
+	 </div>
+
+	   <div class="divleftShopp"</div>
+  </div>
+ 
+	<div class="twocolFixLtHdr" id="maincontent"><%=yield%></div>
+
+	<div id="footer"></div>
+
+</div>	</body>
+</html>

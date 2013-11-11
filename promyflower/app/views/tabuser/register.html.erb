@@ -1,0 +1,26 @@
+﻿<%=stylesheet_link_tag "/public/stylesheets/register.css" %>
+<div class="registerbg">
+   <div class="registertext">
+      <%=form_tag('/tabuser/registerUser') do-%>
+          会员名： <%=text_field(:tabuser,:uName,class:'inputText',size:20)%>
+         	<br> 
+	      密码 <%=text_field(:tabuser,:uPass,class:'inputText',size:14,type:'password')%>
+	     	<br>
+		  真实姓名： <%=text_field :tabuser,:uTname,class:'inputText',size:27%>
+		    <br>
+		  会员地址： <%=text_field :tabuser,:uAddress,class:'inputText',size:27%>
+	     	<br>
+		  会员邮编： <%=text_field :tabuser, :uCode,class:'inputText',size:27%>
+			<br>
+	      会员电话： <%=text_field :tabuser ,:uPhone,class:'inputText',size:27%>
+			<br>
+		  会员E_mail:<%=text_field :tabuser, :uE_mail,class:'inputText',size:27%>
+			<br>
+		  会员地址类型：	<%=text_field :tabuser,:uAddressType,class:'inputText',size:27%>
+			<br>
+		<%=submit_tag '提交',:class=>"registerDivBtn"%>
+		<input type="button" class="registerDivBtn" value="取消"/>
+		<div><h2><%=notice%></h2></div>
+		<%end%>
+</div>
+ 
